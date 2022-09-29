@@ -29,6 +29,9 @@ import hero_section from "./HeroSection.png";
 import money_icon from "./money-icon.svg";
 import ghostkitchen_icon from "./ghostkitchen_icon.svg";
 
+import rick_morty from "./RickAndMorty.png";
+import eye from "./eye.png";
+
 export {
   airbnb,
   bill,
@@ -59,4 +62,6 @@ export {
   alien_icon,
   money_icon,
   ghostkitchen_icon,
+  rick_morty,
+  eye,
 };
