@@ -1,8 +1,28 @@
-import React from "react";
+import React, { createRef } from "react";
 import { useEffect, useState, useCallback } from "react";
 import { rick_morty, eye } from "../../assets";
 
 import eyesStyle from "./eyesStyle";
+
+const eyes = [
+  {
+    classname: "bottom-[677px] left-[371px]",
+    key: 1,
+  },
+  {
+    classname: "bottom-[677px]",
+    key: 2,
+  },
+  {
+    classname: "",
+    key: 3,
+  },
+  {
+    classname: "",
+
+    key: 4,
+  },
+];
 
 function angle(
   centerx: number,
@@ -22,12 +42,12 @@ function RickAndMorty() {
     x: 0,
     y: 0,
   });
-
   const [anchorAxis, setAnchorAxis] = useState({
     anchorX: 0,
     anchorY: 0,
   });
   const [deg, setDeg] = useState(0);
+  const [eyeRefs, setEyeRefs] = useState([]);
 
   useEffect(() => {
     const handleWindowMouseMove = (event: any) => {
@@ -51,6 +71,12 @@ function RickAndMorty() {
         anchorX: rekt.left + rekt.width / 2,
         anchorY: rekt.top + rekt.height / 2,
       });
+    }
+  }, []);
+
+  const measuredEyeAngle = useCallback((image: any) => {
+    console.log(image);
+    if (image !== null && image.length > 0) {
     }
   }, []);
 
@@ -78,19 +104,34 @@ function RickAndMorty() {
       />
 
       <div id="eventyes">
+        {/* {eyes.map(({ classname, key }) => {
+          return (
+            <img
+              key={key}
+              ref={measuredEyeAngle}
+              src={eye}
+              className={`${eyesStyle.eyes} ${classname}}`}
+            />
+          );
+        })}
+        ; */}
         <img
+          ref={eyeRefs[0]}
           src={eye}
           className={`${eyesStyle.eyes} bottom-[776px] left-[421px]`}
         />
         <img
+          ref={eyeRefs[1]}
           src={eye}
           className={`${eyesStyle.eyes} bottom-[804px] left-[369px]`}
         />
         <img
+          ref={eyeRefs[2]}
           src={eye}
           className={`${eyesStyle.eyes} bottom-[710px] left-[290px]`}
         />
         <img
+          ref={eyeRefs[3]}
           src={eye}
           className={`${eyesStyle.eyes} bottom-[727px] left-[230px]`}
         />
