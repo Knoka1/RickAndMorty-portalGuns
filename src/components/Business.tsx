@@ -33,8 +33,8 @@ const Business = () => {
     <section id="brands" className={layout.section}>
       <div className={layout.sectionInfo}>
         <h2 className={styles.heading2}>
-          You have the brand, <br className="sm:block hidden" /> we have the
-          operation.
+          You have a desire, <br className="sm:block hidden" /> we can satisfy
+          it.
           <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
             Together, we'll create a unique food delivery experience available
             to your customer through our partners accross the country.

@@ -31,14 +31,14 @@ const Hero = () => {
           </div>
         </div>
         <h1 className="font-poppins font-semibold ss:text-[68px] text-[52px] text-black ss:leadin-[100px] leading-[75px] w-full">
-          of Food.
+          of Intergalactic items.
         </h1>
         <p className={`${styles.paragraph} max-w-[470px] mt-5 text-black`}>
           Our team is focused on providing the greatest{" "}
-          <span className="text-gradient">food experience</span> you have ever
+          <span className="text-gradient">most exquisite</span> you have ever
           had. By partnering with{" "}
           <span className="text-gradient">well-know brands</span>, we create
-          experiences never ever seen before{" "}
+          experiences like never seen before{" "}
           <span className="text-gradient">through delivery</span>.
         </p>
       </div>

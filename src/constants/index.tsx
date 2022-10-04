@@ -22,11 +22,11 @@ export const navLinks = [
   },
   {
     id: "brands",
-    title: "For Brands",
+    title: "Portal Guns",
   },
   {
     id: "restaurants",
-    title: "For Restaurants",
+    title: "Alien Amenities",
   },
   {
     id: "clients",
@@ -38,23 +38,23 @@ export const features = [
   {
     id: "feature-1",
     icon: star,
-    title: "Star Brands",
+    title: "Star Deals",
     content:
-      "The biggest brands like you've never seen before. Top quality food. A new way to connect to your customers.",
+      "The biggest brands like you've never seen before. Top quality stuff. From all around the universe.",
   },
   {
     id: "feature-2",
     icon: alien_icon,
     title: "Alien Wonders",
     content:
-      "Food like you've never seen before. Delivered from the closest place home. All over the country.",
+      "PORTAL GUNS!. ALIEN STUFF AND SOMETIMES, ALIEN SHIPS(on ordering a planet destruction get 40% OFF).",
   },
   {
     id: "feature-3",
     icon: money_icon,
-    title: "Diversify Revenue",
+    title: "Free Stuff on Mondays",
     content:
-      "Branch into a new market and diversify your revenue by seamlessly joining the food business.",
+      "Free alien wonders on Mondays with Prime deal subscription(at about 10$ monthly).",
   },
 ];
 
