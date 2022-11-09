@@ -89,7 +89,7 @@ export const stats = [
   {
     id: "stats-1",
     title: "Clients",
-    value: "3800+",
+    value: "3.800.000.000+",
   },
   {
     id: "stats-2",
@@ -99,7 +99,7 @@ export const stats = [
   {
     id: "stats-3",
     title: "In Sales",
-    value: "R$200K+",
+    value: "BLE$ 200K+",
   },
 ];
 
