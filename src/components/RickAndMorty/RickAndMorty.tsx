@@ -6,19 +6,19 @@ import eyesStyle from "./eyesStyle";
 
 const eyes = [
   {
-    classname: "bottom-[677px] left-[371px]",
+    classname: "bottom-[776px] left-[421px]",
     key: 1,
   },
   {
-    classname: "bottom-[677px]",
+    classname: "bottom-[804px] left-[369px]",
     key: 2,
   },
   {
-    classname: "",
+    classname: "bottom-[710px] left-[290px]",
     key: 3,
   },
   {
-    classname: "",
+    classname: "bottom-[727px] left-[230px]-+",
 
     key: 4,
   },
@@ -47,7 +47,6 @@ function RickAndMorty() {
     anchorY: 0,
   });
   const [deg, setDeg] = useState(0);
-  const [eyeRefs, setEyeRefs] = useState([]);
 
   useEffect(() => {
     const handleWindowMouseMove = (event: any) => {
@@ -104,7 +103,7 @@ function RickAndMorty() {
       />
 
       <div id="eventyes">
-        {/* {eyes.map(({ classname, key }) => {
+        {/* {eyes.map((i, { classname, key }) => {
           return (
             <img
               key={key}
@@ -115,25 +114,34 @@ function RickAndMorty() {
           );
         })}
         ; */}
+        {/* Acertar tamanho da imagem do olho */}
         <img
-          ref={eyeRefs[0]}
           src={eye}
-          className={`${eyesStyle.eyes} bottom-[776px] left-[421px]`}
+          style={{
+            transform: `rotate(${90 + deg}deg)`,
+          }}
+          className={`${eyesStyle.eyes} ${eyesStyle.transformOrigin} bottom-[776px] left-[421px]`}
         />
         <img
-          ref={eyeRefs[1]}
           src={eye}
-          className={`${eyesStyle.eyes} bottom-[804px] left-[369px]`}
+          style={{
+            transform: `rotate(${90 + deg}deg)`,
+          }}
+          className={`${eyesStyle.eyes} ${eyesStyle.transformOrigin} bottom-[804px] left-[369px]`}
         />
         <img
-          ref={eyeRefs[2]}
           src={eye}
-          className={`${eyesStyle.eyes} bottom-[710px] left-[290px]`}
+          style={{
+            transform: `rotate(${90 + deg}deg)`,
+          }}
+          className={`${eyesStyle.eyes} ${eyesStyle.transformOrigin} bottom-[710px] left-[290px]`}
         />
         <img
-          ref={eyeRefs[3]}
           src={eye}
-          className={`${eyesStyle.eyes} bottom-[727px] left-[230px]`}
+          style={{
+            transform: `rotate(${90 + deg}deg)`,
+          }}
+          className={`${eyesStyle.eyes} ${eyesStyle.transformOrigin} bottom-[727px] left-[230px]`}
         />
         <h2>
           Global mouse coordinates: {globalMouseCoordinates.x}{" "}
