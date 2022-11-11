@@ -1,68 +1,10 @@
-import React, { createRef } from "react";
-import { useEffect, useState, useCallback } from "react";
-import { rick_morty, eye } from "../../assets";
+import React from "react";
+import { useCallback } from "react";
+import { rick_morty } from "../../assets";
 
 import eyesStyle from "./eyesStyle";
 
-const eyes = [
-  {
-    classname: "bottom-[776px] left-[421px]",
-    key: 1,
-  },
-  {
-    classname: "bottom-[804px] left-[369px]",
-    key: 2,
-  },
-  {
-    classname: "bottom-[710px] left-[290px]",
-    key: 3,
-  },
-  {
-    classname: "bottom-[727px] left-[230px]-+",
-
-    key: 4,
-  },
-];
-
-function angle(
-  centerx: number,
-  centery: number,
-  eventx: number,
-  eventy: number
-) {
-  const dy = eventy - centery;
-  const dx = eventx - centerx;
-  const rad = Math.atan2(dy, dx);
-  const deg = (rad * 180) / Math.PI;
-  return deg;
-}
-
-function RickAndMorty() {
-  const [globalMouseCoordinates, setGlobalMouseCoordinates] = useState({
-    x: 0,
-    y: 0,
-  });
-  const [anchorAxis, setAnchorAxis] = useState({
-    anchorX: 0,
-    anchorY: 0,
-  });
-  const [deg, setDeg] = useState(0);
-
-  useEffect(() => {
-    const handleWindowMouseMove = (event: any) => {
-      setGlobalMouseCoordinates({
-        x: event.clientX,
-        y: event.clientY,
-      });
-    };
-
-    window.addEventListener("mousemove", handleWindowMouseMove);
-
-    return () => {
-      window.removeEventListener("mousemove", handleWindowMouseMove);
-    };
-  }, []);
-
+function RickAndMorty({ deg, setAnchorAxis }: any) {
   const measuredImage = useCallback((image: any) => {
     if (image !== null) {
       const rekt = image.getBoundingClientRect();
@@ -72,30 +14,10 @@ function RickAndMorty() {
       });
     }
   }, []);
-
-  const measuredEyeAngle = useCallback((image: any) => {
-    console.log(image);
-    if (image !== null && image.length > 0) {
-    }
-  }, []);
-
-  function handleMouseMove() {
-    setDeg(
-      angle(
-        anchorAxis.anchorX,
-        anchorAxis.anchorY,
-        globalMouseCoordinates.x,
-        globalMouseCoordinates.y
-      )
-    );
-  }
-  //to make global eye movement I should execute the onMouseMove handleMouseMove on a more global div in App.tsx?
   return (
-    <div className="bg-slate-200 z-[2]" onMouseMove={handleMouseMove}>
-      <h2>
-        anchorAxis: {anchorAxis.anchorX} {anchorAxis.anchorY}
-      </h2>
+    <div className="bg-slate-200 z-[2]">
       <h2>deg: {deg}</h2>
+
       <img
         ref={measuredImage}
         src={rick_morty}
@@ -103,50 +25,51 @@ function RickAndMorty() {
       />
 
       <div id="eventyes">
-        {/* {eyes.map((i, { classname, key }) => {
-          return (
-            <img
-              key={key}
-              ref={measuredEyeAngle}
-              src={eye}
-              className={`${eyesStyle.eyes} ${classname}}`}
-            />
-          );
-        })}
-        ; */}
-        {/* Acertar tamanho da imagem do olho */}
-        <img
-          src={eye}
+        <div
           style={{
+            width: 10,
+            height: 10,
+            borderRadius: 16,
+            backgroundColor: "black",
             transform: `rotate(${90 + deg}deg)`,
+            transformOrigin: "bottom center",
+            boxShadow: "0 0 20px 2px rgb(0, 255, 0)",
           }}
-          className={`${eyesStyle.eyes} ${eyesStyle.transformOrigin} bottom-[776px] left-[421px]`}
+          className={`${eyesStyle.eyes} ${eyesStyle.transformOrigin} bottom-[772px] left-[424px]`}
         />
-        <img
-          src={eye}
+        <div
           style={{
+            width: 10,
+            height: 10,
+            borderRadius: 16,
+            backgroundColor: "black",
             transform: `rotate(${90 + deg}deg)`,
+            transformOrigin: " bottom center",
           }}
-          className={`${eyesStyle.eyes} ${eyesStyle.transformOrigin} bottom-[804px] left-[369px]`}
+          className={`${eyesStyle.eyes} ${eyesStyle.transformOrigin} bottom-[779px] left-[371px]`}
         />
-        <img
-          src={eye}
+        <div
           style={{
+            width: 10,
+            height: 10,
+            borderRadius: 16,
+            backgroundColor: "black",
             transform: `rotate(${90 + deg}deg)`,
+            transformOrigin: " bottom center",
           }}
-          className={`${eyesStyle.eyes} ${eyesStyle.transformOrigin} bottom-[710px] left-[290px]`}
+          className={`${eyesStyle.eyes} ${eyesStyle.transformOrigin} bottom-[670px] left-[300px]`}
         />
-        <img
-          src={eye}
+        <div
           style={{
+            width: 10,
+            height: 10,
+            borderRadius: 16,
+            backgroundColor: "black",
             transform: `rotate(${90 + deg}deg)`,
+            transformOrigin: " bottom center",
           }}
-          className={`${eyesStyle.eyes} ${eyesStyle.transformOrigin} bottom-[727px] left-[230px]`}
+          className={`${eyesStyle.eyes} ${eyesStyle.transformOrigin} bottom-[669px] left-[233px]`}
         />
-        <h2>
-          Global mouse coordinates: {globalMouseCoordinates.x}{" "}
-          {globalMouseCoordinates.y}
-        </h2>
       </div>
     </div>
   );

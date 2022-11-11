@@ -1,14 +1,64 @@
-import React from "react";
-import { discount, rick_morty, eye } from "../../assets";
+import React, { useState, useEffect, useCallback } from "react";
+import { discount } from "../../assets";
 import GetStarted from "../GetStarted";
 import RickAndMorty from "../RickAndMorty/RickAndMorty";
 import styles from "../../style";
 
+function angle(
+  centerx: number,
+  centery: number,
+  eventx: number,
+  eventy: number
+) {
+  const dy = eventy - centery;
+  const dx = eventx - centerx;
+  const rad = Math.atan2(dy, dx);
+  const deg = (rad * 180) / Math.PI;
+  return deg;
+}
+
 const Hero = () => {
+  const [globalMouseCoordinates, setGlobalMouseCoordinates] = useState({
+    x: 0,
+    y: 0,
+  });
+  const [anchorAxis, setAnchorAxis] = useState({
+    anchorX: 0,
+    anchorY: 0,
+  });
+  const [deg, setDeg] = useState(0);
+
+  useEffect(() => {
+    const handleWindowMouseMove = (event: any) => {
+      setGlobalMouseCoordinates({
+        x: event.clientX,
+        y: event.clientY,
+      });
+    };
+
+    window.addEventListener("mousemove", handleWindowMouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", handleWindowMouseMove);
+    };
+  }, []);
+
+  function handleMouseMove() {
+    setDeg(
+      angle(
+        anchorAxis.anchorX,
+        anchorAxis.anchorY,
+        globalMouseCoordinates.x,
+        globalMouseCoordinates.y
+      )
+    );
+  }
+
   return (
     <section
       id="home"
       className={`flex md:flex-row flex-col ${styles.paddingY}`}
+      onMouseMove={handleMouseMove}
     >
       <div
         className={`flex-1 ${styles.flexStart} flex-col xl:px-0 sm:px-16 px-6`}
@@ -46,7 +96,7 @@ const Hero = () => {
       <div
         className={`flex-1 flex ${styles.flexCenter} md:my-0 my-10 relative`}
       >
-        <RickAndMorty />
+        <RickAndMorty deg={deg} setAnchorAxis={setAnchorAxis} />
         <div className="absolute z-[0] w-[40%] h-[35%] top-0 pink__gradient " />
         <div className="absolute z-[1] w-[80%] h-[80%] rounded-full bottom-40 white__gradient " />
         <div className="absolute z-[0] w-[50%] h-[50%] right-20 bottom-20 blue__gradient " />
