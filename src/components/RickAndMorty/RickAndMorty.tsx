@@ -1,10 +1,19 @@
 import React from "react";
-import { useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { rick_morty } from "../../assets";
 
 import eyesStyle from "./eyesStyle";
 
 function RickAndMorty({ deg, setAnchorAxis }: any) {
+  const [glow, setGlow] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setGlow(!glow);
+      console.log("works");
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
   const measuredImage = useCallback((image: any) => {
     if (image !== null) {
       const rekt = image.getBoundingClientRect();
@@ -14,6 +23,7 @@ function RickAndMorty({ deg, setAnchorAxis }: any) {
       });
     }
   }, []);
+
   return (
     <div className="bg-slate-200 z-[2]">
       <h2>deg: {deg}</h2>
@@ -33,7 +43,7 @@ function RickAndMorty({ deg, setAnchorAxis }: any) {
             backgroundColor: "black",
             transform: `rotate(${90 + deg}deg)`,
             transformOrigin: "bottom center",
-            boxShadow: "0 0 20px 2px rgb(0, 255, 0)",
+            boxShadow: glow ? "0 0 20px 2px rgb(255, 0, 0)" : "unset",
           }}
           className={`${eyesStyle.eyes} ${eyesStyle.transformOrigin} bottom-[772px] left-[424px]`}
         />
