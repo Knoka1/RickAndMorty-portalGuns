@@ -5,7 +5,6 @@ import card from "./card.png";
 import coinbase from "./coinbase.png";
 import dropbox from "./dropbox.png";
 import quotes from "./quotes.svg";
-import robot from "./robot.png";
 import send from "./Send.svg";
 import shield from "./Shield.svg";
 import star from "./Star.svg";
@@ -25,12 +24,10 @@ import people03 from "./people03.png";
 
 import alien_icon from "./alien-icon.svg";
 import wow_logo from "./wow_logo.svg";
-import hero_section from "./HeroSection.png";
 import money_icon from "./money-icon.svg";
 import ghostkitchen_icon from "./ghostkitchen_icon.svg";
 
 import rick_morty from "./RickAndMorty.png";
-import eye from "./eye.png";
 
 export {
   airbnb,
@@ -40,7 +37,6 @@ export {
   coinbase,
   dropbox,
   quotes,
-  robot,
   send,
   shield,
   star,
@@ -58,10 +54,8 @@ export {
   people02,
   people03,
   wow_logo,
-  hero_section,
   alien_icon,
   money_icon,
   ghostkitchen_icon,
   rick_morty,
-  eye,
 };
