@@ -92,7 +92,6 @@ const Hero = () => {
           <span className="text-gradient">through delivery</span>.
         </p>
       </div>
-
       <div
         className={`flex-1 flex ${styles.flexCenter} md:my-0 my-10 relative`}
       >

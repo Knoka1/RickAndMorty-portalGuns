@@ -1,5 +1,5 @@
 const eyesStyle = {
-  eyes: "position: relative w-[26px] h-[26px] z-[3]",
+  eyes: "w-[26px] h-[26px] z-[3] ",
   //Garantir que funfa por aqui
   transformOrigin: "top center",
 };
