@@ -81,15 +81,15 @@ const Hero = () => {
           </div>
         </div>
         <h1 className="font-poppins font-semibold ss:text-[68px] text-[52px] text-black ss:leadin-[100px] leading-[75px] w-full">
-          of Intergalactic items.
+          of Intergalactic <br className="sm:block hidden" />
+          items.
         </h1>
         <p className={`${styles.paragraph} max-w-[470px] mt-5 text-black`}>
           Our team is focused on providing the greatest{" "}
-          <span className="text-gradient">most exquisite</span> you have ever
-          had. By partnering with{" "}
-          <span className="text-gradient">well-know brands</span>, we create
-          experiences like never seen before{" "}
-          <span className="text-gradient">through delivery</span>.
+          <span className="text-gradient">most exquisite</span> items you have
+          ever seen. By partnering with{" "}
+          <span className="text-gradient">outer world brands</span>, we create
+          experiences like never seen before.
         </p>
       </div>
       <div
