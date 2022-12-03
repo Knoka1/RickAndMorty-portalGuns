@@ -10,8 +10,6 @@ import shield from "./Shield.svg";
 import star from "./Star.svg";
 import menu from "./menu.svg";
 import close from "./close.svg";
-import google from "./google.svg";
-import apple from "./apple.svg";
 import arrowUp from "./arrow-up.svg";
 import discount from "./Discount.svg";
 import facebook from "./facebook.svg";
@@ -28,6 +26,7 @@ import money_icon from "./money-icon.svg";
 import ghostkitchen_icon from "./ghostkitchen_icon.svg";
 
 import rick_morty from "./RickAndMorty.png";
+import scientist from "./RnMScientist.png";
 
 export {
   airbnb,
@@ -42,8 +41,6 @@ export {
   star,
   menu,
   close,
-  google,
-  apple,
   arrowUp,
   discount,
   facebook,
@@ -58,4 +55,5 @@ export {
   money_icon,
   ghostkitchen_icon,
   rick_morty,
+  scientist,
 };
