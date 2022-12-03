@@ -21,11 +21,11 @@ export const navLinks = [
     title: "Home",
   },
   {
-    id: "brands",
+    id: "portalguns",
     title: "Portal Guns",
   },
   {
-    id: "restaurants",
+    id: "alienamenities",
     title: "Alien Amenities",
   },
   {

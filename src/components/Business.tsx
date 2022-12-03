@@ -30,7 +30,7 @@ const FeatureCard = ({ icon, title, content, index }: any) => {
 };
 const Business = () => {
   return (
-    <section id="brands" className={layout.section}>
+    <section id="portalguns" className={layout.section}>
       <div className={layout.sectionInfo}>
         <h2 className={styles.heading2}>
           You want to teleport, <br className="sm:block hidden" /> we can help.
