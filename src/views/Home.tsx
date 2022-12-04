@@ -35,7 +35,6 @@ function Home() {
           <Billing />
           <CardDeal />
           <Testimonials />
-          <Clients />
           <CTA />
           <Footer />
         </div>
