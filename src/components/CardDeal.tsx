@@ -1,7 +1,7 @@
 import React from "react";
 
 import Button from "./Button";
-import { ghostkitchen_icon } from "../assets";
+import { rick_fan } from "../assets";
 
 import styles, { layout } from "../style";
 
@@ -10,8 +10,9 @@ const CardDeal = () => {
     <section className={layout.section}>
       <div className={layout.sectionInfo}>
         <h2 className={styles.heading2}>
-          Find the ideal product for your <br className="sm:block hidden" />
-          kitchen in a few easy steps.
+          Sign the fan club and get free shipping.{" "}
+          <br className="sm:block hidden" />
+          Get fast delivery in Milky way.
         </h2>
         <p className={`${styles.paragraph} max-w-[470px] mt-5`}>
           Don't fall behind. Add a new operation to you business. Add a Ghost
@@ -20,7 +21,7 @@ const CardDeal = () => {
         <Button styles="mt-10" />
       </div>
       <div className={layout.sectionImg}>
-        <img src={ghostkitchen_icon} alt="card" className="w-[100%] h-[100%]" />
+        <img src={rick_fan} alt="card" className="w-[80%] h-[80%]" />
       </div>
     </section>
   );
